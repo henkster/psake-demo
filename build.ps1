@@ -10,7 +10,7 @@ Remove-Module [p]sake
 $psakeModule = (Get-ChildItem (".\packages\psake*\tools\psake.psm1")).FullName | Sort-Object $_ | select -Last 1
 
 #Import-Module $psakeModule
-Import-Module .\Packages\psake.4.5.0\tools\psake.psm1
+Import-Module $psakeModule
 
 Invoke-psake -buildFile .\Build\default.ps1 `
              -taskList Test `
